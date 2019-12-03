@@ -1,4 +1,4 @@
- #!/bin/bash
-javac Day1Part1.java && java Day1Part1
+#!/bin/bash
+javac Day1Part2.java && java Day1Part2
 
 
