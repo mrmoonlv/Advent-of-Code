@@ -18,9 +18,9 @@ for line in lines:
     needs_in_password = 0
     for char in password:
         if(char == need):
-            needs_in_password = needs_in_password + 1
+            needs_in_password += 1
 
     if(needs_in_password in range(start, stop + 1) ):
-        valid_passwords = valid_passwords + 1
+        valid_passwords += + 1
 
 print("Valid passwords: ", valid_passwords)
