@@ -39,12 +39,9 @@ def getAroundSeats(y, x, seat_plan):
 
 
 def seatTaken(y, x, seat_plan):
-    try:
-        if seat_plan[y][x] == "#":
-            return True
-        else:
-            return False
-    except IndexError:
+    if seat_plan[y][x] == "#":
+        return True
+    else:
         return False
 
 
