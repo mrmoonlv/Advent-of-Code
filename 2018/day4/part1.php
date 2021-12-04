@@ -28,11 +28,11 @@ foreach ($sorted_logs as  $timestamp => $log) {
 
         if($current_guard != $active_guard) {
             $active_guard = $current_guard;
-//            echo "Guard changes...Date:: " . $date . PHP_EOL;
+            echo "Guard changes...Date:: " . $date . PHP_EOL;
             $awake = null;
             $sleep = null;
         }
-//        echo "Active guard: #" . $current_guard . PHP_EOL;
+        echo "Active guard: #" . $current_guard . PHP_EOL;
 
         if(empty($minutes_guard_sleeps[$current_guard])) {
             $minutes_guard_sleeps[$current_guard] = 0;
@@ -42,15 +42,15 @@ foreach ($sorted_logs as  $timestamp => $log) {
 
     if(strpos($log, 'falls asleep') !== false) {
         $sleep = (int) substr($parts[0], -2);
-//        echo "Sleep: " . $sleep . PHP_EOL;
+        echo "Sleep: " . $sleep . PHP_EOL;
     }
 
     if(strpos($log, 'wakes up') !== false) {
         $awake = (int) substr($parts[0], -2);
-//        echo "Wakes up: " . $awake . PHP_EOL;
+        echo "Wakes up: " . $awake . PHP_EOL;
 
         $total_sleep = $awake - $sleep;
-//        echo sprintf("Guard #%s sleep from %s to %s . Total %s minutes", $active_guard, $sleep, $awake, $total_sleep) . PHP_EOL;
+        echo sprintf("Guard #%s sleep from %s to %s . Total %s minutes", $active_guard, $sleep, $awake, $total_sleep) . PHP_EOL;
         $minutes_guard_sleeps[$current_guard] = $minutes_guard_sleeps[$current_guard] + $total_sleep;
 
         for($sleep; $sleep < $awake; $sleep++){
